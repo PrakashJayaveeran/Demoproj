@@ -38,8 +38,8 @@ resource "aws_instance" "webserver" {
       "sudo systemctl enable docker.service",
       "sudo systemctl start docker.service",
       "sudo systemctl status docker.service",
-      "sudo mkdir -p $HOME/Devops/Conf",
-      "sudo cd $HOME/Devops/Conf",
+      "sudo mkdir -p /Devops/Conf",
+      "sudo cd /Devops/Conf",
       "sudo docker build -t webserver:devops .",
       "sudo docker run --name webserver -p 8080:8080 -d webserver:devops",
     ]
