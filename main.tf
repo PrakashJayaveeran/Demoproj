@@ -42,10 +42,10 @@ resource "aws_instance" "webserver" {
       "sudo cd /Devops/Conf/",
       "sudo wget https://github.com/PrakashJayaveeran/Demoproj/raw/master/Dockerfile",
       "sudo mv Dockerfile dockerfile",
-      "sudo wget https://github.com/PrakashJayaveeran/Demoproj/blob/master/target/webapp.war?raw=true",
-      "sudo mv webapp.war target/",
-      "sudo docker build -t webserver:devops .",
-      "sudo docker run --name webserver -p 8080:8080 -d webserver:devops",
+      "sudo wget https://github.com/PrakashJayaveeran/Demoproj/blob/master/target/sample.war",
+      "sudo cp -pr sample.war target/",
+      "sudo docker build -t sample-war .",
+      "sudo docker run -d -p 8080:8080 sample-war",
     ]
   }
   connection {
